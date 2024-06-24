@@ -209,3 +209,16 @@ export const EXTCODEHASH: Opcode = {
     state.gas -= EXTCODEHASH.consumeGas;
   },
 };
+
+/* EIP-1559 */
+export const BASEFEE: Opcode = {
+  name: "BASEFEE",
+  opcode: 0x48,
+  consumeGas: 2,
+  execute: (state: EvmState) => {
+    const result = state.basefee;
+    state.stack.push(result);
+    state.pc++;
+    state.gas -= BASEFEE.consumeGas;
+  },
+};

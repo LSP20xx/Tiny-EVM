@@ -19,4 +19,5 @@ export interface EvmState {
   pc: any;
   stack: any;
   origin: any;
+  basefee: any;
 }

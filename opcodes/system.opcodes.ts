@@ -120,3 +120,17 @@ export const SELFDESTRUCT: Opcode = {
     state.gas -= SELFDESTRUCT.consumeGas;
   },
 };
+
+/* EIP-1014 */
+export const CREATE2: Opcode = {
+  name: "CREATE2",
+  opcode: 0xF5,
+  consumeGas: 32000,
+  execute: (state: EvmState) => {
+    const salt = state.stack.pop()!;
+    const b = state.stack.pop()!;
+    const c = state.stack.pop()!;
+    state.pc++;
+    state.gas -= CREATE2.consumeGas;
+  },
+};

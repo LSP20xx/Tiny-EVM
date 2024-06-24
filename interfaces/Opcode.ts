@@ -1,4 +1,4 @@
-import { EvmState } from "./evmState";
+import { EvmState } from "./EvmState";
 
 export interface Opcode {
   name: string;
